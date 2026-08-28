@@ -31,7 +31,7 @@ public class BancoMercantil {
     }
 
     private static void cargarDatos() {
-        cuentas.put("11021654", "1515-5100"); //[cite: 1]
+        cuentas.put("11021654", "1515-5100"); 
         cuentas.put("11111111", "2222-3000:3333-4500");
     }
 
