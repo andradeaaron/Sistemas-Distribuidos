@@ -39,13 +39,11 @@ public class BancoMercantil {
         try (BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
              PrintWriter salida = new PrintWriter(cliente.getOutputStream(), true)) {
 
-            // Lee una sola línea con todo el comando (ej: "11021654:buscar")
             String peticion = entrada.readLine();
             if (peticion == null) return;
             
             String[] datos = peticion.split(":");
             String ci = datos[0];
-            // Si no envía operación, asume "buscar" por defecto
             String operacion = datos.length > 1 ? datos[1] : "buscar"; 
 
             System.out.println("Peticion TCP recibida -> CI: " + ci + " | Operación: " + operacion);
