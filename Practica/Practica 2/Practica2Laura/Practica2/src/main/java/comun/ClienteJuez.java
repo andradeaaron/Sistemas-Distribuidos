@@ -21,11 +21,11 @@ public class ClienteJuez {
             Registry registro = LocateRegistry.getRegistry("10.18.168.198", 1099);
             IJusticia servidorJusticiaMain = (IJusticia) registro.lookup("ServidorJusticiaMain");
             
-            System.out.println("--- Iniciando Emisión de Consulta Judicial ---");
+            System.out.println("Iniciando Emisión de Consulta Judicial");
             
-            String ci = "11021654"; //[cite: 1]
-            String nombres = "Juan Perez"; //[cite: 1]
-            String apellidos = "Segovia"; //[cite: 1]
+            String ci = "11021654";
+            String nombres = "Jorge Luis"; 
+            String apellidos = "Segovia";
             
             System.out.println("Consultando CI: " + ci + " | " + nombres + " " + apellidos);
             
@@ -38,7 +38,7 @@ public class ClienteJuez {
                 }
                 
                 if (!respuesta.getCuentas().isEmpty()) {
-                    System.out.println("\n--- Iniciando orden de congelamiento ---");
+                    System.out.println("\nIniciando orden de congelamiento");
                     Cuenta cuentaObjetivo = respuesta.getCuentas().get(0); 
                     String mensajeRetencion = servidorJusticiaMain.Congelar(cuentaObjetivo, 1000.0);
                     System.out.println("Estado de retención en " + cuentaObjetivo.getBanco() + ": " + mensajeRetencion);
