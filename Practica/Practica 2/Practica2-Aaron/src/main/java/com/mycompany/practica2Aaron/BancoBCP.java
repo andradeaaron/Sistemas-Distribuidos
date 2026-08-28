@@ -51,7 +51,6 @@ public class BancoBCP {
     }
 
     private static String procesar(String mensaje) {
-        // El formato esperado aquí es "operacion:ci" (ej. "buscar:11021654")[cite: 1]
         String[] partes = mensaje.split(":");
         if (partes.length < 2) return "Formato incorrecto";
 
