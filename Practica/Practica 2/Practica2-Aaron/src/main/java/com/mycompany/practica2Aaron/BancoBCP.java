@@ -28,7 +28,6 @@ public class BancoBCP {
                 DatagramPacket peticion = new DatagramPacket(buffer, buffer.length);
                 socket.receive(peticion);
 
-                // SE AGREGA .trim() PARA LIMPIAR LA BASURA DEL BUFFER
                 String mensaje = new String(peticion.getData(), 0, peticion.getLength()).trim();
                 System.out.println("Mensaje UDP recibido: " + mensaje);
 
@@ -46,7 +45,7 @@ public class BancoBCP {
     }
 
     private static void cargarDatos() {
-        cuentas.put("11021654", "6576-6500"); //[cite: 1]
+        cuentas.put("11021654", "6576-6500");
         cuentas.put("22222222", "8888-2000:9999-4000");
     }
 
